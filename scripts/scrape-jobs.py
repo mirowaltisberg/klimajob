@@ -412,6 +412,8 @@ def is_relevant_job(job: dict) -> bool:
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "src", "data")
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "scraped-jobs.json")
 
+TRADE = "klima"
+
 DEFAULT_SEARCH_TERMS = [
     "Kältetechniker",
     "Klimatechniker",
@@ -615,6 +617,7 @@ def sync_to_supabase(normalized: list[dict], scraped_at: str):
             "source": job.get("source", "linkedin"),
             "is_remote": bool(job.get("isRemote")),
             "company_url": job.get("companyUrl", ""),
+            "trade": TRADE,
         }
 
     BATCH_SIZE = 500
