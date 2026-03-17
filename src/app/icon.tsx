@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const size = { width: 32, height: 32 };
+export const size = { width: 48, height: 48 };
 export const contentType = "image/png";
 
 export default function Icon() {
@@ -14,15 +14,15 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#4AADE8",
-          borderRadius: "7px",
+          borderRadius: "10px",
         }}
       >
         {/* Snowflake */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 48 48"
-          width="22"
-          height="22"
+          width="33"
+          height="33"
         >
           <line x1="24" y1="6" x2="24" y2="42" stroke="white" strokeWidth="3" strokeLinecap="round" />
           <line x1="6" y1="24" x2="42" y2="24" stroke="white" strokeWidth="3" strokeLinecap="round" />
