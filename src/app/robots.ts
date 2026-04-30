@@ -9,17 +9,49 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: ["/", "/jobs/", "/klimajobs/"],
         disallow: [
-          "/api/",           // API routes — not for indexing
-          "/*?*sort=",       // Filter/sort parameter URLs — duplicate content
+          "/api/",
+          "/*?*sort=",
           "/*?*type=",
           "/*?*workload=",
           "/*?*remote=",
           "/*?*postedWithinDays=",
-          "/*?*offset=",     // Pagination parameter URLs
-          "/*?*q=",          // Search query parameter URLs — duplicate content
+          "/*?*offset=",
+          "/*?*q=",
           "/*?*loc=",
           "/*?*radiusKm=",
         ],
+      },
+      {
+        userAgent: "GPTBot",
+        allow: ["/"],
+      },
+      {
+        userAgent: "ChatGPT-User",
+        allow: ["/"],
+      },
+      {
+        userAgent: "ClaudeBot",
+        allow: ["/"],
+      },
+      {
+        userAgent: "PerplexityBot",
+        allow: ["/"],
+      },
+      {
+        userAgent: "Google-Extended",
+        allow: ["/"],
+      },
+      {
+        userAgent: "Bingbot",
+        allow: ["/"],
+      },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: ["/"],
+      },
+      {
+        userAgent: "Applebot-Extended",
+        allow: ["/"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
