@@ -151,8 +151,7 @@ function buildJobPostingSchema(job: JobListing): Record<string, any> {
     employmentType: mapEmploymentType(job.type),
     hiringOrganization: {
       "@type": "Organization",
-      name: job.company,
-      ...(job.companyUrl ? { sameAs: job.companyUrl } : {}),
+      name: "Arbeitgeber via klimajob.ch",
     },
     jobLocation: {
       "@type": "Place",
