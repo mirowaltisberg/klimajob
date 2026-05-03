@@ -13,6 +13,8 @@ import {
   findLandingPageBySlug,
   getLandingPath,
   getRelatedLandingPages,
+  toCantonSlug,
+  toRoleSlug,
   TOP_LANDING_PAGES,
   type LandingPageConfig,
 } from "@/lib/landing-pages";
@@ -20,6 +22,8 @@ import { searchJobListings } from "@/lib/job-catalog";
 import type { JobListing } from "@/lib/job-types";
 import { estimateSalary, formatSalaryRange } from "@/lib/salary-estimates";
 import { buildJobPostingSchema } from "@/lib/job-schema";
+import { getEditorialContent } from "@/data/editorial/klimajob";
+import { EditorialIntro } from "@/app/_components/editorial-intro";
 
 export const revalidate = 3600;
 
@@ -157,6 +161,10 @@ export default async function LandingRolePage({ params }: LandingPageProps) {
 
   const relatedPages = getRelatedLandingPages(config, 8);
   const faqSchema = buildFaqSchema(config);
+  const editorial = getEditorialContent(
+    toRoleSlug(config.role),
+    toCantonSlug(config.canton)
+  );
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -282,6 +290,14 @@ export default async function LandingRolePage({ params }: LandingPageProps) {
             </article>
           ))}
         </section>
+
+        {editorial && (
+          <EditorialIntro
+            role={config.role}
+            canton={config.canton}
+            content={editorial}
+          />
+        )}
 
         {/* FAQ section */}
         {config.faqs && config.faqs.length > 0 && (
