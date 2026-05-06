@@ -19,7 +19,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://klimajob.ch";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "458 Klima Jobs Schweiz 2026 | Offene Stellen finden",
+    default: "654 Klima Jobs Schweiz 2026 | Offene Stellen finden",
     template: "%s | klimajob.ch",
   },
   description:
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "Stellen Klimabranche Schweiz",
   ],
   openGraph: {
-    title: "458 Klima Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "654 Klima Jobs Schweiz 2026 | Offene Stellen finden",
     description:
       "Finde aktuelle Klima- und Kältetechnik Jobs in der Schweiz. Stellen für Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer & mehr. Jetzt Lebenslauf einreichen.",
     type: "website",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "458 Klima Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "654 Klima Jobs Schweiz 2026 | Offene Stellen finden",
     description:
       "Finde aktuelle Klima- und Kältetechnik Jobs in der Schweiz. Stellen für Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer & mehr. Jetzt Lebenslauf einreichen.",
   },
