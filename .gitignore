@@ -47,3 +47,4 @@ scripts/.venv/
 
 # scraped data (lives in Supabase now)
 src/data/scraped-jobs.json
+.env*.local
