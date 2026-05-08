@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getIndexableJobListings } from "@/lib/job-catalog";
 import { getLandingPath, TOP_LANDING_PAGES } from "@/lib/landing-pages";
 import { buildJobSlug } from "@/lib/job-slug";
+import { HLK_CITIES } from "@/lib/hlk-cities";
 
 export const revalidate = 3600;
 
@@ -31,6 +32,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "hourly",
       priority: 1,
     },
+    {
+      url: toAbsolute("/lohn-kaeltetechniker-schweiz"),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    },
+    {
+      url: toAbsolute("/kaeltetechniker-ausbildung"),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    },
+    {
+      url: toAbsolute("/hlk-in-der-naehe"),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
+    },
+    ...HLK_CITIES.map((c) => ({
+      url: toAbsolute(`/hlk-jobs/${c.slug}`),
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.85,
+    })),
     ...TOP_LANDING_PAGES.map((page) => ({
       url: toAbsolute(getLandingPath(page)),
       lastModified: landingPageDate,

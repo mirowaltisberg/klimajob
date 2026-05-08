@@ -19,11 +19,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://klimajob.ch";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Klima Jobs Schweiz 2026 | Kältetechnik Stellen",
+    default: "HLK Jobs Schweiz 2026 | Stellen, Lohn & Ausbildung",
     template: "%s | klimajob.ch",
   },
   description:
-    "Finde Klima- und Kältetechnik Jobs in der Schweiz: Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer, Temporär, Festanstellung und Lohninfos.",
+    "HLK Jobs Schweiz (Heizung, Lüftung, Klima, Kälte): Kältetechniker, Lüftungsmonteur, Klimatechniker, Servicetechniker HLK. Lohn, Ausbildung & tägliche Updates.",
   keywords: [
     "Klimajobs",
     "Klimajobs Schweiz",
