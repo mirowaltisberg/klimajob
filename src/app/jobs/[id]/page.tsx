@@ -77,7 +77,7 @@ function buildJobPostingSchema(job: JobListing): Record<string, any> {
 
   const postedDate = new Date(job.datePosted);
   const validThrough = new Date(postedDate);
-  validThrough.setDate(validThrough.getDate() + 60);
+  validThrough.setDate(validThrough.getDate() + 90);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const schema: Record<string, any> = {
@@ -146,8 +146,7 @@ function buildJobPostingSchema(job: JobListing): Record<string, any> {
     schema.jobLocationType = "TELECOMMUTE";
     schema.applicantLocationRequirements = {
       "@type": "Country",
-      name: "Switzerland",
-      alternateName: "Schweiz",
+      name: "CH",
     };
   }
 

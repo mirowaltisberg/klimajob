@@ -21,7 +21,7 @@ function mapEmploymentType(type: string): string {
 export function buildJobPostingSchema(job: JobListing) {
   const datePosted = job.datePosted || new Date().toISOString().split("T")[0];
   const validThrough = new Date(
-    new Date(datePosted).getTime() + 60 * 24 * 60 * 60 * 1000
+    new Date(datePosted).getTime() + 90 * 24 * 60 * 60 * 1000
   )
     .toISOString()
     .split("T")[0];
@@ -97,8 +97,7 @@ export function buildJobPostingSchema(job: JobListing) {
     schema.jobLocationType = "TELECOMMUTE";
     schema.applicantLocationRequirements = {
       "@type": "Country",
-      name: "Switzerland",
-      alternateName: "Schweiz",
+      name: "CH",
     };
   }
 
