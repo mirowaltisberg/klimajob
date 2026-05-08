@@ -81,7 +81,7 @@ export function cleanJobText(input: string): string {
     cleanedLines.push(line);
   }
 
-  return cleanedLines.join(" ").replace(/\s+/g, " ").trim();
+  return cleanedLines.join(" ").replace(/\s+/g, " ").replace(/\u00df/g, "ss").trim();
 }
 
 function truncateAtWord(input: string, maxLength: number): string {

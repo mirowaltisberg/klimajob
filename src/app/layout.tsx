@@ -19,11 +19,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://klimajob.ch";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "654 Klima Jobs Schweiz 2026 | Offene Stellen finden",
+    default: "Klima Jobs Schweiz 2026 | Kältetechnik Stellen",
     template: "%s | klimajob.ch",
   },
   description:
-    "Finde aktuelle Klima- und Kältetechnik Jobs in der Schweiz. Stellen für Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer & mehr. Jetzt Lebenslauf einreichen.",
+    "Finde Klima- und Kältetechnik Jobs in der Schweiz: Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer, Temporär, Festanstellung und Lohninfos.",
   keywords: [
     "Klimajobs",
     "Klimajobs Schweiz",
@@ -39,11 +39,18 @@ export const metadata: Metadata = {
     "Lüftungsmonteur",
     "Gebäudetechniker Klima",
     "Stellen Klimabranche Schweiz",
+    "Klima Job Schweiz",
+    "Klima Stellen Schweiz",
+    "Kältetechniker Stellenangebote",
+    "Klimatechniker Jobs Schweiz",
+    "Lüftungsanlagenbauer Temporär",
+    "HLKK Festanstellung",
+    "Kältetechniker Lohn Schweiz",
   ],
   openGraph: {
-    title: "654 Klima Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "Klima Jobs Schweiz 2026 | Kältetechnik Stellen",
     description:
-      "Finde aktuelle Klima- und Kältetechnik Jobs in der Schweiz. Stellen für Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer & mehr. Jetzt Lebenslauf einreichen.",
+      "Finde Klima- und Kältetechnik Jobs in der Schweiz: Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer, Temporär, Festanstellung und Lohninfos.",
     type: "website",
     url: "/",
     siteName: "klimajob.ch",
@@ -51,12 +58,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "654 Klima Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "Klima Jobs Schweiz 2026 | Kältetechnik Stellen",
     description:
-      "Finde aktuelle Klima- und Kältetechnik Jobs in der Schweiz. Stellen für Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer & mehr. Jetzt Lebenslauf einreichen.",
+      "Finde Klima- und Kältetechnik Jobs in der Schweiz: Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer, Temporär, Festanstellung und Lohninfos.",
   },
   alternates: {
     canonical: "/",
+    languages: {
+      "de-CH": "/",
+      "x-default": "/",
+    },
   },
   verification: {
     google: "el7V2RsquLlGsWyjTfpIu0taGlVTafpyDuinuMxx_Tc",
@@ -117,7 +128,12 @@ const websiteSchema = {
   url: SITE_URL,
   description:
     "Die spezialisierte Jobbörse für Klima-Fachkräfte in der Schweiz.",
-  inLanguage: "de",
+  inLanguage: "de-CH",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE_URL}/?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export default function RootLayout({

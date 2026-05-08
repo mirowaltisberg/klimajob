@@ -46,6 +46,7 @@ export function buildJobPostingSchema(job: JobListing) {
     employmentType: mapEmploymentType(job.type),
     directApply: false,
     industry: "Klimatechnik & Kältetechnik",
+    occupationalCategory: "Klima Stellen Schweiz",
     hiringOrganization: {
       "@type": "Organization",
       name: "Arbeitgeber via klimajob.ch",
@@ -94,6 +95,11 @@ export function buildJobPostingSchema(job: JobListing) {
 
   if (job.isRemote === true) {
     schema.jobLocationType = "TELECOMMUTE";
+    schema.applicantLocationRequirements = {
+      "@type": "Country",
+      name: "Switzerland",
+      alternateName: "Schweiz",
+    };
   }
 
   if (job.workload) {

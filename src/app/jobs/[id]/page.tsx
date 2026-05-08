@@ -109,6 +109,7 @@ function buildJobPostingSchema(job: JobListing): Record<string, any> {
     },
     directApply: false,
     industry: "Klimatechnik & Kältetechnik",
+    occupationalCategory: "Klima Stellen Schweiz",
     url: `${SITE_URL}/jobs/${buildJobSlug(job)}`,
   };
 
@@ -143,6 +144,11 @@ function buildJobPostingSchema(job: JobListing): Record<string, any> {
 
   if (job.isRemote === true) {
     schema.jobLocationType = "TELECOMMUTE";
+    schema.applicantLocationRequirements = {
+      "@type": "Country",
+      name: "Switzerland",
+      alternateName: "Schweiz",
+    };
   }
 
   if (job.workload) {

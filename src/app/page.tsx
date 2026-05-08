@@ -13,9 +13,9 @@ import { buildJobPostingSchema } from "@/lib/job-schema";
 // 4. Server-rendered SEO content (intro, FAQ, salary table, links)
 
 export const metadata: Metadata = {
-  title: "654 Klima Jobs Schweiz 2026 | Offene Stellen finden",
+  title: "Klima Jobs Schweiz 2026 | Kältetechnik Stellen",
   description:
-    "Finde aktuelle Klima Jobs in der Schweiz. Stellen für Kältemontagetechniker, Klimaanlagentechniker, HLKK-Fachkräfte & mehr. Jetzt Lebenslauf einreichen.",
+    "Finde Klima- und Kältetechnik Jobs in der Schweiz: Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer, Temporär, Festanstellung und Lohninfos.",
   alternates: {
     canonical: "/",
   },

@@ -101,6 +101,10 @@ export function HomepageSeoContent() {
             suchst — mit unserer smarten Filterung nach Beruf, Ort, Umkreis und Pensum findest du
             schnell die passende Stelle. Bewirb dich direkt über die Plattform mit wenigen Klicks.
           </p>
+
+          <p className="text-slate-600 text-base leading-relaxed mt-4">
+            Zusätzlich findest du Festanstellungen, Temporärstellen, Teilzeitpensen, Lehrstellen und Stellenangebote mit Lohnband. Besonders gesucht werden Fachkräfte mit EFZ/EBA, Erfahrung im Service, in der Montage oder Projektleitung und regionaler Mobilität. Damit eignet sich die Suche für klassische Klima Jobs in der Schweiz ebenso wie für spezialisierte Profile wie Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer und Projektleiter HLKK.
+          </p>
         </div>
 
         {/* Salary table — highly citeable by AI. id="loehne" anchor lets editorial */}

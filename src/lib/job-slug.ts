@@ -12,7 +12,7 @@ function slugifySegment(value: string, maxLen: number): string {
     .replace(/ä/g, "ae")
     .replace(/ö/g, "oe")
     .replace(/ü/g, "ue")
-    .replace(/ß/g, "ss")
+    .replace(/\u00df/g, "ss")
     .replace(/[éèê]/g, "e")
     .replace(/[àâ]/g, "a")
     .replace(/[îï]/g, "i")

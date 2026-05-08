@@ -15,6 +15,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const jobs = await getIndexableJobListings(400);
   const now = new Date();
   const landingPageDate = new Date("2025-06-01");
+  const cutoffMs = now.getTime() - 90 * 24 * 60 * 60 * 1000;
+  const minDescriptionLength = 250;
+  const validJobs = jobs.filter((job) => {
+    if (!job.id || !job.title) return false;
+    const descriptionLength = (job.fullDescription?.length || job.description?.length || 0);
+    const postedMs = job.datePosted ? Date.parse(job.datePosted) : 0;
+    return descriptionLength >= minDescriptionLength && postedMs > cutoffMs;
+  });
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -31,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ];
 
-  const jobRoutes: MetadataRoute.Sitemap = jobs.map((job) => ({
+  const jobRoutes: MetadataRoute.Sitemap = validJobs.map((job) => ({
     url: toAbsolute(`/jobs/${buildJobSlug(job)}`),
     lastModified: job.datePosted ? new Date(job.datePosted) : now,
     changeFrequency: "daily",
