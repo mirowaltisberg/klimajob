@@ -7,19 +7,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/jobs/", "/klimajobs/"],
-        disallow: [
-          "/api/",
-          "/?*sort=",
-          "/?*type=",
-          "/?*workload=",
-          "/?*remote=",
-          "/?*postedWithinDays=",
-          "/?*offset=",
-          "/?*q=",
-          "/?*loc=",
-          "/?*radiusKm=",
-        ],
+        allow: ["/"],
+        disallow: ["/api/", "/arbeitgeber/login", "/arbeitgeber/kandidaten"],
       },
       {
         userAgent: "GPTBot",

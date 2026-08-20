@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
 
   experimental: {
-    // Tree-shake icon/analytics packages — eliminates unused JS (24 KiB savings)
+    // Keep common component packages eligible for per-import optimization.
     optimizePackageImports: [
       "lucide-react",
       "@vercel/analytics",
@@ -33,11 +33,19 @@ const nextConfig: NextConfig = {
       ["freiburg", "fr"],
       ["graubuenden", "gr"],
     ];
-    return cantonAliases.map(([from, to]) => ({
-      source: `/klimajobs/:role/${from}`,
-      destination: `/klimajobs/:role/${to}`,
-      permanent: true,
-    }));
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host" as const, value: "www.klimajob.ch" }],
+        destination: "https://klimajob.ch/:path*",
+        permanent: true,
+      },
+      ...cantonAliases.map(([from, to]) => ({
+        source: `/klimajobs/:role/${from}`,
+        destination: `/klimajobs/:role/${to}`,
+        permanent: true,
+      })),
+    ];
   },
 
   async headers() {
@@ -73,12 +81,6 @@ const nextConfig: NextConfig = {
         headers: [
           ...securityHeaders,
           { key: "X-Robots-Tag", value: "noindex, nofollow" },
-        ],
-      },
-      {
-        source: "/_next/static/(.*)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
       {

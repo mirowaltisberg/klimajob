@@ -1,33 +1,21 @@
 # klimajob.ch
 
-> Die spezialisierte Jobbörse für Klima-, Kälte- und Lüftungs-Fachkräfte in der Schweiz.
+> Stellenangebote für Kälte- und Klima-Fachkräfte in der Schweiz.
 
-klimajob.ch ist eine Nischen-Jobbörse für die Schweizer Klima-, Kälte- und Lüftungsbranche. Die Plattform richtet sich an Kältetechniker, Klimatechniker, Lüftungsanlagenbauer, Kälteanlagenbauer, Servicetechniker HLKK, Projektleiter HLKK, Lüftungsmonteure, Klimaplaner, Kältemonteure, Gebäudetechniker HLKK, Bauleiter HLKK und Inbetriebnahmetechniker.
+klimajob.ch bündelt öffentlich zugängliche Stelleninserate mit klarem Bezug zum Kälte- und Klimagewerk. Dazu gehören insbesondere Stellen für Kältesystem-Monteurinnen und Kältesystem-Monteure, Kältemonteurinnen und Kältemonteure, Servicetechnik Klima sowie Planung und Projektleitung Klima.
 
 ## Wichtige Seiten
 
-- [Startseite](https://klimajob.ch/): Jobsuche mit Filtern nach Beruf, Ort, Umkreis, Pensum
-- [Kältetechniker Jobs Zürich](https://klimajob.ch/klimajobs/kaeltetechniker/zuerich): Beispiel-Landingpage
-- [Sitemap](https://klimajob.ch/sitemap.xml): Alle verfügbaren Seiten
+- [Startseite und Stellensuche](https://klimajob.ch/)
+- [Ausbildung Kältesystem-Monteur/in EFZ](https://klimajob.ch/kaeltetechniker-ausbildung)
+- [Lohn und GAV richtig einordnen](https://klimajob.ch/lohn-kaeltetechniker-schweiz)
+- [Sitemap](https://klimajob.ch/sitemap.xml)
 
-## Kerninformationen
+## Quellenstandard
 
-- **Sprache**: Deutsch (Schweizer Markt)
-- **Regionen**: Alle Schweizer Kantone — Zürich, Bern, Basel, Aargau, St. Gallen, Luzern, Solothurn, Zug und weitere
-- **Berufe**: Kältetechniker, Klimatechniker, Lüftungsanlagenbauer, Kälteanlagenbauer, Servicetechniker HLKK, Projektleiter HLKK, Lüftungsmonteur, Klimaplaner, Kältemonteur, Gebäudetechniker HLKK, Bauleiter HLKK, Inbetriebnahmetechniker
-- **Lohndaten (Richtwerte, CHF/Jahr)**:
-  - Bauleiter HLKK: 90'000 – 115'000
-  - Projektleiter HLKK: 85'000 – 110'000
-  - Klimaplaner: 80'000 – 100'000
-  - Kältetechniker: 75'000 – 95'000
-  - Klimatechniker: 72'000 – 92'000
-  - Lüftungsanlagenbauer: 70'000 – 88'000
-  - Servicetechniker HLKK: 70'000 – 88'000
-  - Kälteanlagenbauer: 68'000 – 85'000
-  - Lüftungsmonteur: 65'000 – 82'000
-  - Kältemonteur: 65'000 – 80'000
+Berufs- und Ausbildungsinformationen stützen sich auf offizielle Schweizer Quellen wie berufsberatung.ch und den Schweizerischen Verband für Kältetechnik SVK. Hinweise zum Gesamtarbeitsvertrag verlinken auf die aktuelle Übersicht des Staatssekretariats für Wirtschaft SECO. klimajob.ch publiziert keine eigenen pauschalen Lohnbänder.
 
 ## Kontakt
 
 - **Website**: https://klimajob.ch
-- **Branche**: Personalvermittlung / Jobbörse — Klima-, Kälte- und Lüftungsbranche Schweiz
+- **E-Mail**: info@klimajob.ch

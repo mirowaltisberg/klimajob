@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
@@ -7,50 +6,40 @@ import { JsonLd } from "@/components/json-ld";
 import { HapticProvider } from "@/components/haptic-provider";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-});
-
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://klimajob.ch";
+const ANALYTICS_ENABLED = process.env.ANALYTICS_ENABLED === "true";
+const GA_ID = ANALYTICS_ENABLED ? process.env.NEXT_PUBLIC_GA_ID : undefined;
+const FB_PIXEL_ID = ANALYTICS_ENABLED ? process.env.NEXT_PUBLIC_FB_PIXEL_ID : undefined;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "HLK Jobs Schweiz 2026 | Stellen, Lohn & Ausbildung",
+    default: "Klima Jobs Schweiz | Stellen für Kälte- und Klima-Fachkräfte",
     template: "%s | klimajob.ch",
   },
   description:
-    "HLK Jobs Schweiz (Heizung, Lüftung, Klima, Kälte): Kältetechniker, Lüftungsmonteur, Klimatechniker, Servicetechniker HLK. Lohn, Ausbildung & tägliche Updates.",
+    "Finde Stellen für Kältesystem-Monteurinnen und Kältesystem-Monteure, Kältemonteure, Servicetechnik, Planung und Projektleitung Klima in der Schweiz.",
   keywords: [
     "Klimajobs",
     "Klimajobs Schweiz",
-    "Kältetechniker EFZ Jobs",
-    "Klimatechniker Jobs",
-    "Lüftungsanlagenbauer Jobs",
-    "Heizungsinstallateur Jobs",
-    "HLKK Jobs Schweiz",
-    "Servicetechniker Kälte",
-    "Wärmepumpen-Spezialist",
-    "Kälteanlagenbauer",
-    "Projektleiter HLKK",
-    "Lüftungsmonteur",
-    "Gebäudetechniker Klima",
-    "Stellen Klimabranche Schweiz",
+    "Kältesystem-Monteur Jobs",
+    "Projektleiter Kälte/Klima",
+    "Kältemonteur",
+    "Kältesystem-Planer Jobs",
+    "Servicetechniker Kälte/Klima",
+    "Stellen Kälte- und Klimabranche Schweiz",
     "Klima Job Schweiz",
     "Klima Stellen Schweiz",
-    "Kältetechniker Stellenangebote",
-    "Klimatechniker Jobs Schweiz",
-    "Lüftungsanlagenbauer Temporär",
-    "HLKK Festanstellung",
-    "Kältetechniker Lohn Schweiz",
+    "Kältesystem-Monteur Stellenangebote",
+    "Kältemonteur Jobs Schweiz",
+    "Kältesystem-Monteur Temporär",
+    "Klima Festanstellung",
+    "Kältesystem-Monteur Lohn Schweiz",
   ],
   openGraph: {
-    title: "Klima Jobs Schweiz 2026 | Kältetechnik Stellen",
+    title: "Klima Jobs Schweiz | Stellenangebote",
     description:
-      "Finde Klima- und Kältetechnik Jobs in der Schweiz: Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer, Temporär, Festanstellung und Lohninfos.",
+      "Finde Stellenangebote für Kältesystem-Monteur EFZ, Kältemonteur, Servicetechnik, Planung und Projektleitung Klima.",
     type: "website",
     url: "/",
     siteName: "klimajob.ch",
@@ -58,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Klima Jobs Schweiz 2026 | Kältetechnik Stellen",
+    title: "Klima Jobs Schweiz | Stellenangebote",
     description:
-      "Finde Klima- und Kältetechnik Jobs in der Schweiz: Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer, Temporär, Festanstellung und Lohninfos.",
+      "Finde Stellenangebote für Kältesystem-Monteur EFZ, Kältemonteur, Servicetechnik, Planung und Projektleitung Klima.",
   },
   alternates: {
     canonical: "/",
@@ -91,16 +80,14 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-// SEO-DECISION: Organization schema placed in root layout so it appears on every page
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "klimajob.ch",
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/logo.svg`,
   description:
-    "klimajob.ch ist die spezialisierte Jobbörse für Klima- und Kältetechnik-Fachkräfte in der Schweiz. Finde offene Stellen als Kältetechniker EFZ, Klimatechniker, Lüftungsanlagenbauer, Projektleiter HLKK und mehr.",
-  foundingDate: "2025",
+    "klimajob.ch bündelt Stellenangebote mit klarem Bezug zum Kälte- und Klimagewerk in der Schweiz.",
   areaServed: {
     "@type": "Country",
     name: "Switzerland",
@@ -110,15 +97,8 @@ const organizationSchema = {
     "@type": "ContactPoint",
     contactType: "customer service",
     availableLanguage: "German",
-    url: `${SITE_URL}/`,
+    url: `${SITE_URL}/kontakt`,
   },
-  sameAs: [
-    "https://www.youtube.com/@klimajob",
-    "https://www.facebook.com/klimajob",
-    "https://www.instagram.com/klimajob",
-    "https://www.linkedin.com/company/klimajob",
-    "https://twitter.com/klimajob",
-  ],
 };
 
 const websiteSchema = {
@@ -127,7 +107,7 @@ const websiteSchema = {
   name: "klimajob.ch",
   url: SITE_URL,
   description:
-    "Die spezialisierte Jobbörse für Klima-Fachkräfte in der Schweiz.",
+    "Die spezialisierte Jobbörse für Kälte- und Klima-Fachkräfte in der Schweiz.",
   inLanguage: "de-CH",
   potentialAction: {
     "@type": "SearchAction",
@@ -142,31 +122,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de-CH">
       <head>
-        <link rel="dns-prefetch" href="https://connect.facebook.net" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        {FB_PIXEL_ID && <link rel="dns-prefetch" href="https://connect.facebook.net" />}
       </head>
-      <body lang="de" className={`${plusJakarta.variable} antialiased font-sans bg-slate-50`}>
+      <body lang="de-CH" className="antialiased font-sans">
+        <a className="skip-link" href="#main-content">
+          Zum Inhalt
+        </a>
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
         <HapticProvider>{children}</HapticProvider>
-        <Analytics />
-        <SpeedInsights />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || "G-0000000000"}`}
-          strategy="lazyOnload"
-        />
-        <Script id="gtag-init" strategy="lazyOnload">
-          {`
+        {ANALYTICS_ENABLED && <Analytics />}
+        {ANALYTICS_ENABLED && <SpeedInsights />}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="lazyOnload"
+            />
+            <Script id="gtag-init" strategy="lazyOnload">
+              {`
             window.dataLayer=window.dataLayer||[];
             function gtag(){dataLayer.push(arguments);}
             gtag('js',new Date());
-            gtag('config','${process.env.NEXT_PUBLIC_GA_ID || "G-0000000000"}');
+            gtag('config','${GA_ID}');
           `}
-        </Script>
-        <Script id="fb-pixel" strategy="lazyOnload">
-          {`
+            </Script>
+          </>
+        )}
+        {FB_PIXEL_ID && (
+          <Script id="fb-pixel" strategy="lazyOnload">
+            {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -175,19 +162,23 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID || "0000000000000000"}');
+            fbq('init', '${FB_PIXEL_ID}');
             fbq('track', 'PageView');
           `}
-        </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FB_PIXEL_ID || "0000000000000000"}&ev=PageView&noscript=1`}
-            alt=""
-          />
-        </noscript>
+          </Script>
+        )}
+        {FB_PIXEL_ID && (
+          <noscript>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+              alt=""
+            />
+          </noscript>
+        )}
       </body>
     </html>
   );

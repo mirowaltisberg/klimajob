@@ -1,0 +1,138 @@
+{
+  "jobs": [
+    {
+      "trade": "klima",
+      "id": "scraped-klima-840295e6f404",
+      "jobUrl": "https://jobs.example.ch/reject-1",
+      "source": "indeed",
+      "title": "Elektroinstallateur EFZ",
+      "description": "Der Betrieb führt neben Elektroarbeiten auch Klimaprojekte aus.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-b9830013de12",
+      "jobUrl": "https://jobs.example.ch/reject-2",
+      "source": "google",
+      "title": "Projektleiter Gebäudetechnik",
+      "description": "Im Projekt geht es ausschliesslich um Klimaanlagen und Trinkwasser.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-57265693ff45",
+      "jobUrl": "https://jobs.example.ch/review-1",
+      "source": "linkedin",
+      "title": "Kältesystem-Monteur / Heizungsinstallateur",
+      "description": "Gemischte Funktion für Klima- und Heizungsanlagen.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REVIEW"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-958b224d4fb5",
+      "jobUrl": "https://jobs.example.ch/reject-3",
+      "source": "indeed",
+      "title": "Pflegefachperson Klimaabteilung",
+      "description": "Pflege und Betreuung in einer medizinischen Einrichtung.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "elektro",
+      "id": "scraped-klima-fb418c1d08fd",
+      "jobUrl": "https://jobs.example.ch/wrong-trade",
+      "source": "indeed",
+      "title": "Kältesystem-Monteur",
+      "description": "Kälte- und Klimainstallationen in Neu- und Umbauten.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "ACCEPT",
+      "expectedIdentityError": "wrong-trade"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-000000000000",
+      "jobUrl": "https://jobs.example.ch/id-mismatch",
+      "source": "indeed",
+      "title": "Kältemonteur",
+      "description": "Montage und Prüfung von Klimaanlagen.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "ACCEPT",
+      "expectedIdentityError": "id-url-mismatch"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-4fbd9d1ea600",
+      "jobUrl": "https://jobs.example.ch/generic-monteur",
+      "source": "indeed",
+      "title": "Monteur 100%",
+      "description": "Montage von Klimaanlagen und Trinkwasserleitungen.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-863c496aa5f5",
+      "jobUrl": "https://jobs.example.ch/pipe-without-context",
+      "source": "google",
+      "title": "Rohrleitungsmonteur",
+      "description": "Rohrleitungsbau für industrielle Prozesse.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-F146A51E95B4",
+      "jobUrl": "https://jobs.example.ch/uppercase-id",
+      "source": "linkedin",
+      "title": "Kältesystem-Monteur",
+      "description": "Kälte- und Klimainstallationen in Neu- und Umbauten.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "ACCEPT",
+      "expectedIdentityError": "invalid-id"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-3fd524fd2f33",
+      "jobUrl": "https://jobs.example.ch/legacy-id",
+      "source": "indeed",
+      "title": "Kältesystem-Monteur",
+      "description": "Kälte- und Klimainstallationen in Neu- und Umbauten.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "ACCEPT",
+      "expectedIdentityError": "invalid-id"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-d3f3b9dbf6d7",
+      "jobUrl": "https://jobs.example.ch/sanitary-sales",
+      "source": "indeed",
+      "title": "Verkaufsberater Bad und Klima",
+      "description": "Beratung und Verkauf im Ausstellungsraum.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-df770f64aed4",
+      "jobUrl": "https://jobs.example.ch/body-only-planer",
+      "source": "google",
+      "title": "Gebäudetechnikplaner",
+      "description": "Planung von Klimaanlagen.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "klima",
+      "id": "scraped-klima-7b5526d4f8a2",
+      "jobUrl": "https://jobs.example.ch/reject-work-climate",
+      "source": "indeed",
+      "title": "Techniker mit hervorragendem Arbeitsklima",
+      "description": "Allgemeine technische Funktion ohne Bezug zu Kälte-, Klima- oder Lüftungsanlagen.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    }
+  ]
+}

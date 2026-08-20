@@ -1,0 +1,116 @@
+{
+  "trade": "klima",
+  "idPattern": "^scraped-klima-[0-9a-f]{12}$",
+  "allowedSources": ["google", "indeed", "linkedin"],
+  "tradeContextPatterns": [
+    "\\bklima(?:anlage|anlagen|technik|techniker|kälte|kaelte)?\\b",
+    "\\bkälte(?:technik|techniker|system|systeme|system-monteur)?\\b",
+    "\\bkaelte(?:technik|techniker|system|systeme|system-monteur)?\\b",
+    "\\blüftung\\w*\\b", "\\blueftung\\w*\\b", "\\blufttechnik\\w*\\b",
+    "\\bventilation\\w*\\b", "\\brefrigeration\\b"
+  ],
+  "hardNegativeTitlePatterns": [
+    "pflege", "spitex", "gesundheit", "sozial", "verkauf", "sales", "marketing",
+    "jurist", "anwalt", "fahrer", "chauffeur", "logistik", "reinigung", "koch",
+    "küche", "kueche", "arzt", "medizin", "software", "developer", "data scientist",
+    "human resources", "product manager", "product owner", "frontend", "backend",
+    "devops", "buchhalt", "accounting", "controller", "internship", "ingénieur",
+    "technicien", "électricien", "elettricista", "disegnatore"
+  ],
+  "otherTradeTitlePatterns": [
+    "elektro", "elektriker", "sanitär", "sanitaer", "heizung", "heizungsinstallateur",
+    "heizungsmonteur", "wärmepump", "waermepump", "spengler", "dachdecker",
+    "zimmermann", "holzbau", "schreiner", "bodenleger", "plattenleger", "gärtner",
+    "gaertner", "hlks"
+  ],
+  "highSpecificityTitles": [
+    { "pattern": "kältesystem.{0,2}monteur|kaeltesystem.{0,2}monteur|kältemonteur|kaeltemonteur", "publicTitle": "Kältesystem-Monteur/in", "profile": "refrigeration" },
+    { "pattern": "kältetechniker|kaeltetechniker|klimatechniker", "publicTitle": "Kälte- und Klimatechniker/in", "profile": "service" },
+    { "pattern": "lüftungsanlagenbauer|lueftungsanlagenbauer|lüftungsmonteur|lueftungsmonteur", "publicTitle": "Lüftungsanlagenbauer/in", "profile": "ventilation" },
+    { "pattern": "kältesystem.{0,2}planer|kaeltesystem.{0,2}planer", "publicTitle": "Kältesystem-Planer/in", "profile": "planning" },
+    { "pattern": "gebäudetechnikplaner.{0,20}(lüftung|lueftung)|gebaeudetechnikplaner.{0,20}(lüftung|lueftung)", "publicTitle": "Gebäudetechnikplaner/in Lüftung", "profile": "planning" }
+  ],
+  "broadTitlesRequiringTradeContext": [
+    { "pattern": "projektleit", "publicTitle": "Projektleiter/in Kälte/Klima", "profile": "leadership" },
+    { "pattern": "bauleit", "publicTitle": "Bauleiter/in Kälte/Klima", "profile": "leadership" },
+    { "pattern": "gebäudetechnikplan|gebaeudetechnikplan|fachplan|zeichner|planer", "publicTitle": "Fachplaner/in Kälte/Klima", "profile": "planning" },
+    { "pattern": "servicetech|servicemonte|kundendienst|instandhalt|wartung", "publicTitle": "Servicetechniker/in Kälte/Klima", "profile": "service" },
+    { "pattern": "chefmonteur|teamleit", "publicTitle": "Chefmonteur/in Kälte/Klima", "profile": "leadership" },
+    { "pattern": "inbetrieb|regelungstech|anlagenoptim", "publicTitle": "Inbetriebnahmetechniker/in Kälte/Klima", "profile": "commissioning" },
+    { "pattern": "installateur|monteur|techniker", "publicTitle": "Kälte- und Klimatechniker/in", "profile": "service" }
+  ],
+  "profiles": {
+    "leadership": {
+      "responsibilities": [
+        "Kälte-, Klima- oder Lüftungsprojekte planen und bis zur Übergabe koordinieren",
+        "Termine, Qualität und Arbeitssicherheit auf der Baustelle sicherstellen",
+        "Absprachen mit Fachplanung, Bauleitung und Kundschaft führen"
+      ],
+      "requirements": [
+        "Abgeschlossene Ausbildung in Kälte-, Klima- oder Lüftungstechnik",
+        "Erfahrung in der Leitung oder Koordination entsprechender Anlagenprojekte",
+        "Selbstständige, zuverlässige und lösungsorientierte Arbeitsweise"
+      ]
+    },
+    "planning": {
+      "responsibilities": [
+        "Anlagenpläne, Schemas und technische Unterlagen erstellen",
+        "Luftmengen, Kälteleistung und Schnittstellen mit den Fachbereichen koordinieren",
+        "Projektunterlagen prüfen, nachführen und termingerecht bereitstellen"
+      ],
+      "requirements": [
+        "Abgeschlossene Ausbildung in Kälte-, Klima-, Lüftungsplanung oder Gebäudetechnik",
+        "Gutes Verständnis für Schemas, Berechnungen und technische Dokumentation",
+        "Strukturierte, sorgfältige und teamorientierte Arbeitsweise"
+      ]
+    },
+    "service": {
+      "responsibilities": [
+        "Kälte- und Klimaanlagen warten, prüfen und bei Störungen instand setzen",
+        "Fehler systematisch eingrenzen und ausgeführte Arbeiten dokumentieren",
+        "Anlagen nach dem Einsatz sicher und nachvollziehbar übergeben"
+      ],
+      "requirements": [
+        "Abgeschlossene Ausbildung mit klarem Kälte- oder Klimabezug",
+        "Erfahrung in Service, Unterhalt oder Störungsbehebung",
+        "Zuverlässiges Auftreten und selbstständige Arbeitsweise"
+      ]
+    },
+    "refrigeration": {
+      "responsibilities": [
+        "Kältesysteme montieren, Leitungen verbinden und Komponenten fachgerecht einbauen",
+        "Dichtheit und Betriebswerte prüfen sowie Arbeiten dokumentieren",
+        "Sicherheits-, Umwelt- und Herstellervorgaben konsequent einhalten"
+      ],
+      "requirements": [
+        "Ausbildung oder fundierte Erfahrung in Kältesystemen",
+        "Sicherer Umgang mit Schemas, Messmitteln und Verbindungstechniken",
+        "Sorgfältige, verantwortungsbewusste und teamorientierte Arbeitsweise"
+      ]
+    },
+    "ventilation": {
+      "responsibilities": [
+        "Lüftungskanäle, Geräte und Luftauslässe nach Plan montieren",
+        "Anlagen prüfen, dokumentieren und für die Inbetriebnahme vorbereiten",
+        "Schnittstellen zu Bau und Gebäudetechnik sauber koordinieren"
+      ],
+      "requirements": [
+        "Ausbildung oder fundierte Erfahrung im Lüftungsanlagenbau",
+        "Sicherer Umgang mit Plänen, Werkzeugen und Montagetechniken",
+        "Zuverlässige, sorgfältige und teamorientierte Arbeitsweise"
+      ]
+    },
+    "commissioning": {
+      "responsibilities": [
+        "Kälte-, Klima- oder Lüftungsanlagen prüfen und in Betrieb nehmen",
+        "Betriebswerte erfassen, Einstellungen dokumentieren und Abweichungen klären",
+        "Sicherheits- und Herstellervorgaben bei jedem Arbeitsschritt einhalten"
+      ],
+      "requirements": [
+        "Technische Ausbildung mit klarem Kälte-, Klima- oder Lüftungsbezug",
+        "Sicherer Umgang mit Schemas, Messmitteln und Regelungstechnik",
+        "Sorgfältige, nachvollziehbare und verantwortungsbewusste Arbeitsweise"
+      ]
+    }
+  }
+}

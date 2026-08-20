@@ -13,33 +13,26 @@ export default function OgImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "linear-gradient(135deg, #0f172a 0%, #0c1929 50%, #0e2a3d 100%)",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          padding: "72px 86px",
+          background: "#eff8f4",
+          borderTop: "18px solid #46a998",
           fontFamily: "sans-serif",
         }}
       >
-        {/* Snowflake */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 48 48"
-          width="120"
-          height="120"
-          style={{ marginBottom: 32 }}
-        >
-          <line x1="24" y1="6" x2="24" y2="42" stroke="#4AADE8" strokeWidth="3" strokeLinecap="round" />
-          <line x1="6" y1="24" x2="42" y2="24" stroke="#4AADE8" strokeWidth="3" strokeLinecap="round" />
-          <line x1="11" y1="11" x2="37" y2="37" stroke="#4AADE8" strokeWidth="2.5" strokeLinecap="round" />
-          <line x1="37" y1="11" x2="11" y2="37" stroke="#4AADE8" strokeWidth="2.5" strokeLinecap="round" />
-          <line x1="24" y1="6" x2="20" y2="11" stroke="#4AADE8" strokeWidth="2" strokeLinecap="round" />
-          <line x1="24" y1="6" x2="28" y2="11" stroke="#4AADE8" strokeWidth="2" strokeLinecap="round" />
-          <line x1="24" y1="42" x2="20" y2="37" stroke="#4AADE8" strokeWidth="2" strokeLinecap="round" />
-          <line x1="24" y1="42" x2="28" y2="37" stroke="#4AADE8" strokeWidth="2" strokeLinecap="round" />
-          <line x1="6" y1="24" x2="11" y2="20" stroke="#4AADE8" strokeWidth="2" strokeLinecap="round" />
-          <line x1="6" y1="24" x2="11" y2="28" stroke="#4AADE8" strokeWidth="2" strokeLinecap="round" />
-          <line x1="42" y1="24" x2="37" y2="20" stroke="#4AADE8" strokeWidth="2" strokeLinecap="round" />
-          <line x1="42" y1="24" x2="37" y2="28" stroke="#4AADE8" strokeWidth="2" strokeLinecap="round" />
-        </svg>
+        <div style={{ display: "flex", alignItems: "center", gap: 26 }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="90" height="90">
+            <g fill="none" stroke="#26737d" strokeWidth="2.4" strokeLinecap="round">
+              <path d="M6 15c9-8 27-8 36 0M4 24c11-7 29-7 40 0M8 33c8-5 24-5 32 0" />
+              <path d="M13 10v28M13 38l-4-5M13 38l4-5" stroke="#46a998" />
+            </g>
+            <circle cx="35" cy="24" r="3" fill="#b1c83f" stroke="#eff8f4" strokeWidth="1.2" />
+          </svg>
+          <div style={{ color: "#26737d", fontSize: 24, fontWeight: 800, letterSpacing: 3 }}>
+            KÄLTE · KLIMA · SCHWEIZ
+          </div>
+        </div>
 
         {/* Brand name */}
         <div
@@ -49,13 +42,13 @@ export default function OgImage() {
             gap: 0,
           }}
         >
-          <span style={{ fontSize: 72, fontWeight: 900, color: "#f8fafc", letterSpacing: -1 }}>
-            Klima
+          <span style={{ fontSize: 84, fontWeight: 900, color: "#1d424b", letterSpacing: -4 }}>
+            klima
           </span>
-          <span style={{ fontSize: 72, fontWeight: 900, color: "#4AADE8", letterSpacing: -1 }}>
+          <span style={{ fontSize: 84, fontWeight: 900, color: "#26737d", letterSpacing: -4 }}>
             job
           </span>
-          <span style={{ fontSize: 52, fontWeight: 400, color: "#94a3b8", letterSpacing: -1 }}>
+          <span style={{ fontSize: 58, fontWeight: 700, color: "#718426", letterSpacing: -2 }}>
             .ch
           </span>
         </div>
@@ -64,12 +57,12 @@ export default function OgImage() {
         <div
           style={{
             fontSize: 28,
-            color: "#94a3b8",
+            color: "#456b70",
             marginTop: 20,
             letterSpacing: 0.5,
           }}
         >
-          Die Jobbörse für Klima- und Kältetechnik-Fachkräfte in der Schweiz
+          Klimastellen. Präzise gefunden.
         </div>
       </div>
     ),
