@@ -26,6 +26,7 @@ test("uses controlled trade roles and validated preferences for strange input", 
   });
 
   assert.equal(opportunities.length, 12);
+  assert.equal(new Set(opportunities.map((item) => item.role)).size, 12);
   assert.ok(opportunities.every((item) => item.location === "Schweiz"));
   assert.ok(opportunities.every((item) => item.preferenceSummary === "Region Schweiz · Remote bevorzugt"));
   assert.equal(JSON.stringify(opportunities).includes("<script>"), false);

@@ -37,7 +37,7 @@ const CONTROLLED_ROLES: ControlledRole[] = [
     aliases: ["kältesystem-monteur", "kaeltesystem-monteur", "kältemonteur", "kaeltemonteur"],
   },
   {
-    key: "kaelte-klima-service",
+    key: "kaelte-klima-servicetechnik",
     label: "Kälte- und Klimatechniker/in",
     aliases: ["kältetechniker", "kaeltetechniker", "klimatechniker"],
   },
@@ -60,6 +60,36 @@ const CONTROLLED_ROLES: ControlledRole[] = [
     key: "kaelte-klima-inbetriebnahme",
     label: "Inbetriebnahmetechniker/in Kälte/Klima",
     aliases: ["inbetriebnahme", "regelungstechnik", "anlagenoptimierung"],
+  },
+  {
+    key: "kaeltesystem-praktik",
+    label: "Kältesystem-Monteurpraktiker/in EBA",
+    aliases: ["kältesystem-monteurpraktiker", "kaeltesystem-monteurpraktiker", "eba"],
+  },
+  {
+    key: "kaelte-klima-service",
+    label: "Servicetechniker/in Kälte/Klima",
+    aliases: ["servicetechniker kälte", "servicetechniker kaelte", "service klima"],
+  },
+  {
+    key: "klima-anlagenbau",
+    label: "Anlagenbauer/in Lüftung/Klima",
+    aliases: ["anlagenbauer", "anlagenbauerin", "anlagenbau klima"],
+  },
+  {
+    key: "kaelte-klima-chefmontage",
+    label: "Chefmonteur/in Kälte/Klima",
+    aliases: ["chefmonteur", "chefmonteurin", "chefmontage"],
+  },
+  {
+    key: "kaelte-klima-kundendienst",
+    label: "Kundendiensttechniker/in Kälte/Klima",
+    aliases: ["kundendiensttechniker", "kundendiensttechnikerin", "kundendienst klima"],
+  },
+  {
+    key: "kaelte-klima-kalkulation",
+    label: "Kalkulator/in Kälte/Klima",
+    aliases: ["kalkulator", "kalkulatorin", "kalkulation klima"],
   },
 ];
 
