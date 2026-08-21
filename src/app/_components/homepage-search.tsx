@@ -779,6 +779,7 @@ export function HomepageSearch({ initialData, initialFilters }: HomepageSearchPr
                           </div>
                           <Link
                             href={opportunity.contactHref}
+                            data-analytics-action={`direct_hire_contact:${opportunity.id}`}
                             prefetch={false}
                             className="job-card__action inline-flex min-h-11 shrink-0 items-center gap-1 self-start rounded-md px-2 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:self-auto"
                           >
