@@ -12,7 +12,7 @@
     "check:direct-hire": "node --import tsx --test src/lib/direct-hire-opportunities.test.ts",
     "check:job-schema": "node --import tsx --test src/lib/job-schema.test.ts",
     "check:analytics-boundary": "node scripts/check-analytics-boundary.mjs",
-    "check:applications": "node --import tsx --test src/lib/application-validation.test.ts",
+    "check:applications": "node --import tsx --test src/lib/application-validation.test.ts src/lib/application-persistence.test.ts",
     "check:job-safety:python": "python3 scripts/check_job_safety.py",
     "check:publisher-boundary": "python3 scripts/check_publisher_boundary.py",
     "check:workflow-boundary": "python3 scripts/check_workflow_boundary.py",
