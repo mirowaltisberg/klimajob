@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "check:public-jobs": "tsx scripts/check-public-jobs.ts",
-    "check:raw-job-boundary": "NODE_PATH=./node_modules/next/dist/compiled node --conditions=react-server --import tsx --test src/lib/scraped-jobs.test.ts",
+    "check:raw-job-boundary": "NODE_PATH=./node_modules/next/dist/compiled node --conditions=react-server --import tsx --test src/lib/scraped-jobs.test.ts src/lib/job-catalog.test.ts",
     "check:direct-hire": "node --import tsx --test src/lib/direct-hire-opportunities.test.ts",
     "check:job-schema": "node --import tsx --test src/lib/job-schema.test.ts",
     "check:analytics-boundary": "node scripts/check-analytics-boundary.mjs",

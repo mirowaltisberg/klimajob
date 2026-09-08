@@ -174,12 +174,12 @@ let cachedCurated: JobListing[] | null = null;
 let cachedCuratedAt = 0;
 const CURATED_TTL_MS = 120_000;
 
-async function buildCuratedScrapedListings(): Promise<JobListing[]> {
-  if (cachedCurated && Date.now() - cachedCuratedAt < CURATED_TTL_MS) return cachedCurated;
+async function buildCuratedScrapedListings(options: { fresh?: boolean } = {}): Promise<JobListing[]> {
+  if (!options.fresh && cachedCurated && Date.now() - cachedCuratedAt < CURATED_TTL_MS) return cachedCurated;
 
   const deduped = new Map<string, JobListing>();
 
-  for (const job of await loadScrapedJobs()) {
+  for (const job of await loadScrapedJobs(options)) {
     const relevanceScore = scoreScrapedJob(job);
     if (relevanceScore < MIN_RELEVANCE_SCORE) {
       continue;
@@ -582,6 +582,7 @@ export async function getSimilarJobListings(current: JobListing, limit = 4): Pro
 }
 
 export async function getIndexableJobListings(limit = 400): Promise<JobListing[]> {
-  const curatedScraped = await buildCuratedScrapedListings();
+  // Dieselbe aktuelle Publikationsprüfung wie beim einzelnen Stellenabruf.
+  const curatedScraped = await buildCuratedScrapedListings({ fresh: true });
   return sortJobs(curatedScraped, "newest").slice(0, limit);
 }
