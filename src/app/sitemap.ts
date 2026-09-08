@@ -6,7 +6,8 @@ import {
   SEO_PRIORITY_LANDING_PAGES,
 } from "@/lib/landing-pages";
 
-export const revalidate = 3600;
+// Abgelaufene Stellen dürfen nicht aus einer älteren ISR-Antwort stammen.
+export const dynamic = "force-dynamic";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://klimajob.ch";
 

@@ -143,8 +143,8 @@ const SUPABASE_PAGE_SIZE = 1000;
  * Paginates through all results since Supabase limits to 1000 rows per request.
  * Fails closed with an empty list if Supabase is unreachable.
  */
-export async function loadScrapedJobs(): Promise<ScrapedJob[]> {
-  if (cachedJobs && Date.now() - cachedAt < CACHE_TTL_MS) {
+export async function loadScrapedJobs(options: { fresh?: boolean } = {}): Promise<ScrapedJob[]> {
+  if (!options.fresh && cachedJobs && Date.now() - cachedAt < CACHE_TTL_MS) {
     return cachedJobs;
   }
 
